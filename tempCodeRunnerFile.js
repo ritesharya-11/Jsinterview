@@ -1,3 +1,5 @@
-const details  = students.filter((stu) => stu.marks > 60);
 
-// console.log(details);
+//  function square(num){
+//     return num*num;
+    
+//  }
