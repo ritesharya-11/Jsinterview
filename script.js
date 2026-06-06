@@ -57,15 +57,82 @@
 
 //----callback function
 
-function greet(name, callback){
-   console.log("hello" + name);
-   callback();
+// function greet(name, callback){
+//    console.log("hello" + name);
+//    callback();
    
+// }
+// function sayBye(){
+//    console.log("goodb");
+// }
+// greet("ritesh","kfjkg")
+// let h1 =  document.createElement("1")
+// console.log(h1);
+
+// let p = document.querySelector("p")
+
+// p.addEventListener("dblclick",function(){
+//    p.style.color= "pink"
+// })/
+
+
+// let inp = document.querySelector("input");
+
+// inp.addEventListener("input", function(dets){
+//    if(dets.data !== null){
+//       console.log(dets.data);
+      
+//    }
+// })
+
+//change event tab chalta hai jab apka input select ya text area me change hojaye
+
+// let sel = document.querySelector("select");
+//    let device = document.querySelector("#device");
+
+// sel.addEventListener("select" ,function(dets){
+//    device.textContent= $`{dets.target.value} Device Selected`;
+   
+
+// })
+// let nm  = document.querySelector("#name");
+// let form = document.querySelector("form");
+
+
+// form.addEventListener("summit", function (dets){
+//    dets.preventDefault();
+
+//    if(nm.value.lenght <= 2){
+//       document.querySelector("#hide").style.display = "initial";
+
+//    }
+// });
+
+let email = document.querySelector("#email");
+let password = document.querySelector("#password")
+let form =  document.querySelector("form")
+
+form.addEventListener("submit", function(dets){
+   dets.preventDefault();
+   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   const passwordRegex =
+/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+let emailans = emailRegex.test(email.value);
+let passwordand = passwordRegex.test(password.value);
+
+if(!emailans){
+   document.querySelector("#emailError").textContent = "Eimail is incorrect";
+   document.querySelector("#emailError").computedStyleMap.display = "intial";
 }
-function sayBye(){
-   console.log("goodb");
+
+if(!password){
+   document.querySelector("#passwordError").textContent = "password is incorrect";
+   document.querySelector("#password").computedStyleMap.display = "intial";
 }
-greet("ritesh","kfjkg")
+
+})
+
 
  
 
